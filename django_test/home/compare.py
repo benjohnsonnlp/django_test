@@ -22,7 +22,7 @@ next(rows)
 
 for row in rows:
     for index in range(1, 7):
-        cards[qualities[index - 1]].append(row[index])
+        cards[qualities[index - 1]].append(row[index].lower())
         #when index = 1
         # cards['best'].append(row[index]))
 
@@ -32,10 +32,10 @@ def compare_cards(c1, c2):
     c1_quality, c2_quality = None, None
     c1_index, c2_index = None, None
     for key, value in cards.items():
-        if c1 in value:
+        if c1.lower() in value:
             c1_quality = key
             c1_index = value.index(c1)
-        if c2 in value:
+        if c2.lower() in value:
             c2_quality = key
             c2_index = value.index(c2)
 
