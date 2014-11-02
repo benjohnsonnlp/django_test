@@ -8,7 +8,7 @@ __author__ = 'ben'
 
 csv_url = 'https://docs.google.com/spreadsheet/pub?key=0AsKyuF-d-OHadEJQYjlPbzByclBXZUNZcE1PcXdydXc&output=csv'
 
-csv_text = requests.get(csv_url).text.encode('UTF-8')
+csv_text = requests.get(csv_url).text
 
 f = io.StringIO(csv_text)
 
