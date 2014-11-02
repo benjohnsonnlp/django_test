@@ -34,10 +34,10 @@ def compare_cards(c1, c2):
     for key, value in cards.items():
         if c1.lower() in value:
             c1_quality = key
-            c1_index = value.index(c1)
+            c1_index = value.index(c1.lower())
         if c2.lower() in value:
             c2_quality = key
-            c2_index = value.index(c2)
+            c2_index = value.index(c2.lower())
 
     if not c1_quality or not c2_quality:
         return "Cards not valid"
