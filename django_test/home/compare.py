@@ -10,7 +10,7 @@ csv_url = 'https://docs.google.com/spreadsheet/pub?key=0AsKyuF-d-OHadEJQYjlPbzBy
 
 csv_text = requests.get(csv_url).text.encode('UTF-8')
 
-f = io.StringIO(csv_text
+f = io.StringIO(csv_text)
 
 rows = csv.reader(f)
 
