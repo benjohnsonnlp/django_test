@@ -8,9 +8,9 @@ __author__ = 'ben'
 
 csv_url = 'https://docs.google.com/spreadsheet/pub?key=0AsKyuF-d-OHadEJQYjlPbzByclBXZUNZcE1PcXdydXc&output=csv'
 
-csv_text = requests.get(csv_url).text
+csv_text = requests.get(csv_url).text.encode('UTF-8')
 
-f = io.StringIO(csv_text)
+f = io.StringIO(csv_text
 
 rows = csv.reader(f)
 
@@ -55,6 +55,7 @@ def compare_cards(c1, c2):
 
 
 if __name__ == '__main__':
+    print(cards)
     print(compare_cards("Lorewalker Cho", "Onyxia"))
     print(compare_cards("Tinkmaster Overspark", "Nozdormu"))
     print(json.dumps(cards, indent=4))
